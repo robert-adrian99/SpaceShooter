@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class SpaceshipMovement : MonoBehaviour
 {
-    public float speed = 10;
+    public float speed;
 
     public float xMax, xMin, zMax, zMin;
 
     public GameObject shot;
     public Transform shotTransform;
 
-    public float shotRate = 0.1f;
-    public float nextShot = 0.0f;
+    public float shotRate;
+    public float nextShot;
 
     void Update()
     {
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        
         Vector3 direction = new Vector3
         (
             mousePosition.x - transform.position.x,
             0.0f,
             mousePosition.z - transform.position.z
         );
-
         transform.forward = direction;
 
         if (Input.GetButtonDown("Fire1") && Time.time > nextShot)

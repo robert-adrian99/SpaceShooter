@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayPressed : MonoBehaviour
 {
+    /// Action for PLAY button on Start Scene
     public void PressedPlay()
     {
         SceneManager.LoadScene("Level01");
